@@ -20,7 +20,7 @@ setup(
     author='Carl Meyer',
     author_email='carl@oddbird.net',
     url='https://github.com/carljm/fern/',
-    py_modules=['fern.py'],
+    py_modules=['fern'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
