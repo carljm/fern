@@ -76,17 +76,17 @@ class Env:
 
         return coerce(val) if val is not None else val
 
-    def boolean(self, keys, default=NOT_PROVIDED):
+    def boolean(self, keys, default=NOT_PROVIDED, mode_defaults=None):
         """Shortcut to set ``coerce=fern.parse_boolean``."""
-        return self(keys, default=default, coerce=parse_boolean)
+        return self(keys, default=default, mode_defaults=mode_defaults, coerce=parse_boolean)
 
-    def comma_list(self, keys, default=NOT_PROVIDED):
+    def comma_list(self, keys, default=NOT_PROVIDED, mode_defaults=None):
         """Shortcut to set ``coerce=fern.parse_comma_list``."""
-        return self(keys, default=default, coerce=parse_comma_list)
+        return self(keys, default=default, mode_defaults=mode_defaults, coerce=parse_comma_list)
 
-    def integer(self, keys, default=NOT_PROVIDED):
+    def integer(self, keys, default=NOT_PROVIDED, mode_defaults=None):
         """Shortcut to set ``coerce=int``."""
-        return self(keys, default=default, coerce=int)
+        return self(keys, default=default, mode_defaults=mode_defaults, coerce=int)
 
 
 def parse_boolean(s):

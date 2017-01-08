@@ -112,20 +112,29 @@ class TestEnv:
     def test_boolean(self, env, monkeypatch):
         """Can parse boolean from env."""
         monkeypatch.setenv('GOOD', 'true')
+        monkeypatch.delenv('BAD', raising=False)
 
         assert env.boolean('GOOD') is True
+        assert env.boolean('BAD', default='1') is True
+        assert env.boolean('BAD', mode_defaults={env.mode: 't'}) is True
 
     def test_integer(self, env, monkeypatch):
         """Can parse int from env."""
         monkeypatch.setenv('QUANTITY', '6')
+        monkeypatch.delenv('QTY', raising=False)
 
         assert env.integer('QUANTITY') == 6
+        assert env.integer('QTY', default='3') == 3
+        assert env.integer('QTY', mode_defaults={env.mode: '4'}) == 4
 
     def test_comma_list(self, env, monkeypatch):
         """Can parse comma separated list from env."""
         monkeypatch.setenv('HOSTS', 'a,b,c')
+        monkeypatch.delenv('HOSTZ', raising=False)
 
         assert env.comma_list('HOSTS') == ['a', 'b', 'c']
+        assert env.comma_list('HOSTZ', default='a,b') == ['a', 'b']
+        assert env.comma_list('HOSTZ', mode_defaults={env.mode: 'a,b'}) == ['a', 'b']
 
 
 @pytest.mark.parametrize(
