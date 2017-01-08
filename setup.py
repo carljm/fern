@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 def get_long_description():
@@ -20,7 +20,7 @@ setup(
     author='Carl Meyer',
     author_email='carl@oddbird.net',
     url='https://github.com/carljm/fern/',
-    packages=find_packages(),
+    py_modules=['fern.py'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
