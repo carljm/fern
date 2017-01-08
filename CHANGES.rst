@@ -1,7 +1,13 @@
 CHANGES
 =======
 
-master (unreleased)
--------------------
+0.2 (2017.01.08)
+----------------
 
-* Initial working version.
+* Fix ``mode_defaults`` with convenience coercion methods.
+
+
+0.1 (2017.01.07)
+----------------
+
+* Initial version.
