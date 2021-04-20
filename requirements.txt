@@ -5,7 +5,7 @@ args==0.1.0
 clint==0.5.1
 coverage==4.3.1
 pkginfo==1.4.1
-py==1.4.32
+py==1.10.0
 pytest==3.0.5
 pytest-cov==2.4.0
 requests==2.12.4
